@@ -1,5 +1,4 @@
-version: "3.3"
-
+version: '3.3'
 services:
   mssql-db:
     image: mcr.microsoft.com/mssql/server
@@ -16,4 +15,12 @@ services:
     depends_on: 
       - mssql-db
     ports: 
-      - 61000:80
+      - 33433:1433
+  flyway:
+    image: flyway/flyway
+    command: migrate
+    volumes:
+      - ./db:/flyway/sql
+      - ./db:/flyway/conf
+    depends_on:
+      - app-database
