@@ -3,7 +3,7 @@ services:
   mssql-db:
     image: mcr.microsoft.com/mssql/server
     ports:
-      - 62000:1433
+      - 32333:1233
     environment: 
       ACCEPT_EULA: Y
       SA_PASSWORD: "HelloW0rld"
