@@ -23,4 +23,4 @@ services:
       - ./db:/flyway/sql
       - ./db:/flyway/conf
     depends_on:
-      - app-database
+      - mssql-db
